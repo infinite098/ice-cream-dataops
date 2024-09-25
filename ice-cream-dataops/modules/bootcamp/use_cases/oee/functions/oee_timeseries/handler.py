@@ -70,12 +70,10 @@ def process_site(client, data_set_id, lookback_minutes, site):
             status_dps = dps_df[f"{asset}:status"]
             planned_status_dps = dps_df[f"{asset}:planned_status"]
 
-            total_items = len(count_dps)
-
             if (
-                total_items != len(good_dps)
-                or total_items != len(status_dps)
-                or total_items != len(planned_status_dps)
+                len(count_dps) != len(good_dps)
+                or len(count_dps) != len(status_dps)
+                or len(count_dps) != len(planned_status_dps)
             ):
                 # We expect ALL dependent timeseries to have the exact same number of datapoints
                 # for the specified time range for the calculation to execute.
@@ -86,8 +84,8 @@ def process_site(client, data_set_id, lookback_minutes, site):
 
             # Calculate the components of OEE
             dps_df[f"{asset}:off_spec"] = count_dps - good_dps
-            dps_df[f"{asset}:quality"] = good_dps / total_items
-            dps_df[f"{asset}:performance"] = (total_items / status_dps) / (60.0 / 3.0)
+            dps_df[f"{asset}:quality"] = good_dps / count_dps
+            dps_df[f"{asset}:performance"] = (count_dps / status_dps) / (60.0 / 3.0)
             dps_df[f"{asset}:availability"] = status_dps / planned_status_dps
 
             dps_df[f"{asset}:oee"] = dps_df[f"{asset}:quality"] * dps_df[f"{asset}:performance"] * dps_df[f"{asset}:availability"]
