@@ -1,6 +1,6 @@
 environment:
   name: test
-  project: cdf-bootcamp-05-prod
+  project: cdf-bootcamp-05-test
   type: test
   selected:
   - modules/bootcamp/data_foundation
@@ -10,7 +10,7 @@ environment:
 variables:
   modules:
     bootcamp:
-      CDF_PROJECT: cdf-bootcamp-05-prod # ex. cdf-bootcamp-01-test
+      CDF_PROJECT: cdf-bootcamp-05-test # ex. cdf-bootcamp-01-test
       IDP_CLIENT_ID: ${IDP_CLIENT_ID} # replaced by .env
       IDP_CLIENT_SECRET: ${IDP_CLIENT_SECRET} # replaced by .env
       IDP_TENANT_ID: ${IDP_TENANT_ID} # replaced by .env
@@ -19,15 +19,15 @@ variables:
       IDP_SCOPES: https://westeurope-1.cognitedata.com/.default
       IDP_TOKEN_URL: ${IDP_TOKEN_URL} # replaced by .env
       # Groups
-      data_developer_source_id: a63a445a-da92-4c6f-a2ab-250abacbde63
+      data_developer_source_id: 4750c40e-8df6-43cd-9d85-9732ecb42f1f
       # OBJECT ID FOR TEST/PROD DATA PIPELINE OEE ENTRA GROUP
-      data_pipeline_oee_source_id: a27566f7-374d-469e-80bc-f9aa6c821196
+      data_pipeline_oee_source_id: 7b9e1dc6-aa0e-4386-b27b-116fce13ae3b
       # OBJECT ID FOR TEST/PROD ADMIN TK ENTRA GROUP
-      readwrite_source_id: b2ddb515-6b70-4872-80c3-b62a8fea8a05
+      readwrite_source_id: eae4db9f-25ee-47fb-905d-896787a40d9d
       # OBJECT ID FOR TEST/PROD ADMIN TK ENTRA GROUP
-      readonly_source_id: b2ddb515-6b70-4872-80c3-b62a8fea8a05
+      readonly_source_id: eae4db9f-25ee-47fb-905d-896787a40d9d
       # OBJECT ID FOR TEST/PROD ADMIN TK ENTRA GROUP
-      icapi_extractors_source_id: dd86c482-7996-4d26-9fbd-4a5b48a605a8
+      icapi_extractors_source_id: 72bc4240-b98f-4357-ad46-88275ddfa847
       # Client Ids
       data_pipeline_oee_client_id: ${DATA_PIPELINE_OEE_CLIENT_ID} # replaced by .env
       data_pipeline_oee_client_secret: ${DATA_PIPELINE_OEE_CLIENT_SECRET} # replaced by .env

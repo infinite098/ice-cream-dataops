@@ -115,3 +115,21 @@ capabilities:
         - WRITE
       scope:
         all: {}
+  - entitymatchingAcl:
+      actions:
+        - READ
+        - WRITE
+      scope:
+        all: {}
+  - annotationsAcl:
+      actions:
+        - READ
+        - WRITE
+      scope:
+        all: {}
+  - eventsAcl:
+      actions:
+        - READ
+        - WRITE
+      scope:
+        all: {}
